@@ -13,6 +13,7 @@ export class AppComponent {
   title:string = 'Matvii-Lukavenko-Learning-Angular';
   name:string = 'Matvii Lukavenko';
   favFood:string = 'Pierogi';
+  gamesArray: any;
 }
 
 const gamesArray: Games[] = [
