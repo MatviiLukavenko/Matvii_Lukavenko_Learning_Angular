@@ -1,28 +1,41 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <html>
+<style>
+  .game-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .game-details {
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    color: #2c3e50;
+  }
+</style>
 <head><title>{{title}}</title></head>
 <body>
-<h1>Hi, my name is {{name}}</h1>
-<h2>My favorite food is {{favFood}}</h2>
+<!-- games.component.html -->
+
+<div *ngFor="let game of gamesArray" class="game-container">
+  <div class="game-details">
+    <h2>{{ game.title }}</h2>
+    <p><strong>Year Released:</strong> {{ game.yearReleased }}</p>
+    <p><strong>Production Company:</strong> {{ game.productionCompany }}</p>
+    <p><strong>Genre:</strong> {{ game.genre }}</p>
+
+    <!-- Use ngIf to conditionally display the active status -->
+    <p *ngIf="game.isActive !== undefined">
+      <strong>Status:</strong> {{ game.isActive ? 'Active' : 'Inactive' }}
+    </p>
+  </div>
+</div>
+
 </body>
 
 </html>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 <router-outlet />
