@@ -13,3 +13,11 @@ export class AppComponent {
   name:string = 'Matvii Lukavenko';
   favFood:string = 'Pierogi';
 }
+
+export interface Games {
+  title: string;
+  yearReleased: number;
+  productionCompany: string;
+  genre: string;
+  isActive?: boolean;
+}
