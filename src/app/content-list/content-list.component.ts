@@ -10,6 +10,7 @@ import { Games } from '../Games';
 
 export class ContentListItemComponent {
   @Input() game!: Games;
+  gamesArray: any;
 }
 
 export class ContentListComponent {
