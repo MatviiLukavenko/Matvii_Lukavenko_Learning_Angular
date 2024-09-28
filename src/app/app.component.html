@@ -20,19 +20,23 @@
 <body>
 <!-- games.component.html -->
 
-<div *ngFor="let game of gamesArray" class="game-container">
+<!-- <div *ngFor="let game of gamesArray" class="game-container">
   <div class="game-details">
     <h2>{{ game.title }}</h2>
     <p><strong>Year Released:</strong> {{ game.yearReleased }}</p>
     <p><strong>Production Company:</strong> {{ game.productionCompany }}</p>
     <p><strong>Genre:</strong> {{ game.genre }}</p>
 
-    <!-- Use ngIf to conditionally display the active status -->
+     Use ngIf to conditionally display the active status
     <p *ngIf="game.isActive !== undefined">
       <strong>Status:</strong> {{ game.isActive ? 'Active' : 'Inactive' }}
     </p>
   </div>
-</div>
+</div> -->
+
+<!-- Assignment 3 below -->
+<app-content-list [gamesArray]="gamesArray"></app-content-list>
+
 
 </body>
 
