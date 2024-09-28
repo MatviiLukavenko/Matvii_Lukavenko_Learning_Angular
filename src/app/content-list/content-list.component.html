@@ -1,14 +1,16 @@
 <p>content-list works!</p>
 
-<h2>Games List</h2>
-<ul>
-  <li *ngFor="let game of gamesArray">
-    <h3>{{ game.title }}</h3>
-    <p>Year Released: {{ game.yearReleased }}</p>
-    <p>Production Company: {{ game.productionCompany }}</p>
-    <p>Genre: {{ game.genre }}</p>
-    <p *ngIf="game.isActive">Status: Active</p>
-    <p *ngIf="!game.isActive">Status: Inactive</p>
-  </li>
-</ul>
-
+<div>
+  <h2>Game List</h2>
+  <ul>
+    <li *ngFor="let game of gamesArray">
+      <div class="content-list-item">
+        <h3>{{ game.title }}</h3>
+        <p>Year Released: {{ game.yearReleased }}</p>
+        <p>Production Company: {{ game.productionCompany }}</p>
+        <p>Genre: {{ game.genre }}</p>
+        <p>Status: {{ game.isActive ? 'Active' : 'Inactive' }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
