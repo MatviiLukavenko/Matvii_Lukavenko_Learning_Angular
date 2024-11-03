@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from './data.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Games } from './Games.ts';
+import { Games } from './Games';
 
 @Component({
   selector: 'app-modify',
@@ -22,12 +22,12 @@ export class ModifyComponent implements OnInit {
   ) {
     // Initialize the reactive form
     this.gameForm = this.fb.group({
-      title: ['', Validators.required],
-      yearReleased: ['', Validators.required],
+      title: ['', [Validators.required, Validators.pattern(/^[^#?!]*$/)]], // No special characters
+      yearReleased: [null, [Validators.required, Validators.min(1900), Validators.max(new Date().getFullYear())]],
       productionCompany: ['', Validators.required],
       genre: ['', Validators.required],
       isActive: [true],
-      imageUrl: ['', Validators.required]
+      imageUrl: ['', [Validators.required, Validators.pattern(/^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))$/)]], // Validate URL format
     });
   }
 
