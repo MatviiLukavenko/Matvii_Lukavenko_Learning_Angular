@@ -21,12 +21,14 @@ export class ContentListComponent {
       productionCompany: 'Nintendo',
       genre: 'Action-adventure',
       isActive: true,
+      imageUrl: '',
     },
     {
       title: 'Final Fantasy VII',
       yearReleased: 1997,
       productionCompany: 'Square Enix',
       genre: 'RPG',
+      imageUrl: '',
     },
     {
       title: 'Halo: Combat Evolved',
@@ -34,12 +36,14 @@ export class ContentListComponent {
       productionCompany: 'Bungie',
       genre: 'Shooter',
       isActive: false,
+      imageUrl: '',
     },
     {
       title: 'The Witcher 3: Wild Hunt',
       yearReleased: 2015,
       productionCompany: 'CD Projekt RED',
       genre: 'RPG',
+      imageUrl: '',
     },
     {
       title: 'Minecraft',
@@ -47,6 +51,7 @@ export class ContentListComponent {
       productionCompany: 'Mojang',
       genre: 'Sandbox',
       isActive: true,
+      imageUrl: '',
     },
     {
       title: 'Among Us',
@@ -54,6 +59,7 @@ export class ContentListComponent {
       productionCompany: 'Innersloth',
       genre: 'Party',
       isActive: true,
+      imageUrl: '',
     }
   ];
 }
