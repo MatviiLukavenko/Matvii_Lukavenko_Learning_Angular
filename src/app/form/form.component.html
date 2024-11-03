@@ -1,0 +1,52 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Edit Game' : 'Add New Game' }}</h2>
+  <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="title">Game Title:</label>
+      <input id="title" formControlName="title" placeholder="Enter the game's title" required />
+      <div *ngIf="gameForm.get('title')?.invalid && gameForm.get('title')?.touched" class="error">
+        Title is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="yearReleased">Release Year:</label>
+      <input type="number" id="yearReleased" formControlName="yearReleased" placeholder="Year it was released" required />
+      <div *ngIf="gameForm.get('yearReleased')?.invalid && gameForm.get('yearReleased')?.touched" class="error">
+        Year is required and must be a valid number.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="productionCompany">Production Company:</label>
+      <input id="productionCompany" formControlName="productionCompany" placeholder="Who made this game?" required />
+      <div *ngIf="gameForm.get('productionCompany')?.invalid && gameForm.get('productionCompany')?.touched" class="error">
+        Production company is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <input id="genre" formControlName="genre" placeholder="What genre is this game?" required />
+      <div *ngIf="gameForm.get('genre')?.invalid && gameForm.get('genre')?.touched" class="error">
+        Genre is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="isActive">Currently Active:</label>
+      <input id="isActive" type="checkbox" formControlName="isActive" />
+    </div>
+
+    <div class="form-group">
+      <label for="imageUrl">Cover Image URL:</label>
+      <input id="imageUrl" formControlName="imageUrl" placeholder="Link to the game's cover image" required />
+      <div *ngIf="gameForm.get('imageUrl')?.invalid && gameForm.get('imageUrl')?.touched" class="error">
+        Image URL is required.
+      </div>
+    </div>
+
+    <button type="submit" class="submit-button" [disabled]="gameForm.invalid">{{ isEditMode ? 'Update Game Info' : 'Add This Game!' }}</button>
+  </form>
+</div>

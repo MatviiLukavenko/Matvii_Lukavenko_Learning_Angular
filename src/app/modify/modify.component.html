@@ -1,0 +1,37 @@
+<div class="game-form-container">
+  <h2>{{ isEditMode ? 'Edit Game Details' : 'Add a New Game to the List' }}</h2>
+
+  <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Game Title:</label>
+      <input id="title" formControlName="title" placeholder="Enter the game's title" />
+    </div>
+
+    <div class="form-group">
+      <label for="yearReleased">Release Year:</label>
+      <input type="number" id="yearReleased" formControlName="yearReleased" placeholder="Year it was released" />
+    </div>
+
+    <div class="form-group">
+      <label for="productionCompany">Production Company:</label>
+      <input id="productionCompany" formControlName="productionCompany" placeholder="Who made this game?" />
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre:</label>
+      <input id="genre" formControlName="genre" placeholder="What genre is this game?" />
+    </div>
+
+    <div class="form-group">
+      <label for="isActive">Currently Active:</label>
+      <input id="isActive" type="checkbox" formControlName="isActive" />
+    </div>
+
+    <div class="form-group">
+      <label for="imageUrl">Cover Image URL:</label>
+      <input id="imageUrl" formControlName="imageUrl" placeholder="Link to the game's cover image" />
+    </div>
+
+    <button type="submit" class="submit-button">{{ isEditMode ? 'Update Game Info' : 'Add This Game!' }}</button>
+  </form>
+</div>

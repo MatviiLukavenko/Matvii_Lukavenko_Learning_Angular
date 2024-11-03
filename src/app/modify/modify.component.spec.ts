@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {ContentListItemComponent } from './content-list.component';
+import { ModifyComponent } from './modify.component';
 
-describe('ContentListComponent', () => {
-  let component: ContentListItemComponent;
-  let fixture: ComponentFixture<ContentListItemComponent>;
+describe('ModifyComponent', () => {
+  let component: ModifyComponent;
+  let fixture: ComponentFixture<ModifyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContentListItemComponent]
+      imports: [ModifyComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ContentListItemComponent);
+    fixture = TestBed.createComponent(ModifyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,6 +20,4 @@ describe('ContentListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-
 });
