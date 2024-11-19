@@ -5,4 +5,5 @@ export interface Games {
   genre: string;
   isActive?: boolean;
   imageUrl: string; //for step 10 assignment-5
+  price?: number;
 }
