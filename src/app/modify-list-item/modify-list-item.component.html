@@ -1,8 +1,34 @@
 <div>
   <h2>Modify List Item</h2>
   <form>
-    <label for="itemName">Item Name:</label>
-    <input type="text" id="itemName" name="itemName">
-    <button type="submit">Save Changes</button>
+    <form [formGroup]="gameForm" (ngSubmit)="onSubmit()">
+      <label>Title:</label>
+      <input formControlName="title" appHighlightOnFocus="lightpink" />
+
+      <label>Year Released:</label>
+      <input type="number" formControlName="yearReleased" appHighlightOnFocus="lightblue" />
+
+      <label>Production Company:</label>
+      <input formControlName="productionCompany" appHighlightOnFocus="lightyellow" />
+
+      <label>Genre:</label>
+      <input formControlName="genre" appHighlightOnFocus="lightgreen" />
+
+      <label>Active:</label>
+      <input type="checkbox" formControlName="isActive" />
+
+      <label>Image URL:</label>
+      <input formControlName="imageUrl" appHighlightOnFocus="lightcyan" />
+
+      <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} Game</button>
+
+      <ul>
+        <li *ngFor="let game of games" [appShowDetailsOnHover]="game.title">
+          {{ game.title }}
+        </li>
+      </ul>
+
+    </form>
+
   </form>
 </div>

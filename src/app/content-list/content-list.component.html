@@ -7,9 +7,9 @@
       <div class="content-list-item">
         <h3>{{ game.title }}</h3>
         <p>Year Released: {{ game.yearReleased }}</p>
-        <p>Production Company: {{ game.productionCompany }}</p>
+        <p><strong>Produced By:</strong> {{ game.productionCompany | companyYear:game.yearReleased }}</p>
         <p>Genre: {{ game.genre }}</p>
-        <p>Status: {{ game.isActive ? 'Active' : 'Inactive' }}</p>
+        <p><strong>Title:</strong> <span [innerHTML]="game.title | statusColor:game.isActive"></span></p>
       </div>
     </li>
   </ul>
